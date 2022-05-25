@@ -45,6 +45,10 @@
 #include "audio_board/generic_es8388/board.h"
 #define AUDIO_DRIVER AUDIO_CODEC_ES8388_DEFAULT_HANDLE
 #define KIT_DRIVER 1
+#elif AUDIOKIT_BOARD==11
+#include "audio_board/esp32_s3_korvo2_v3/board.h"
+#define AUDIO_DRIVER AUDIO_CODEC_ES8311_DEFAULT_HANDLE
+#define KIT_DRIVER 2
 #endif
 
 

@@ -62,7 +62,7 @@ struct AudioKitConfig {
 #if ESP_IDF_VERSION_MAJOR < 4                  
   int mclk_gpio = 0; // default value
 #else
-  int mclk_gpio = -1; // take definition from board_pins_config.c
+  int mclk_gpio = 16; // take definition from board_pins_config.c
 #endif
   bool sd_active = true;
   bool auto_clear = true;
@@ -146,7 +146,7 @@ struct AudioKitConfig {
 #if ESP_IDF_VERSION_MAJOR >= 4                  
     // overwrite mclk from board def if necessary
      if (mclk_gpio>=0){
-      // result.mck_io_num = (gpio_num_t)mclk_gpio; //mclk_gpio;
+      result.mck_io_num = (gpio_num_t)mclk_gpio; //mclk_gpio;
      }
 #endif
     return result;
